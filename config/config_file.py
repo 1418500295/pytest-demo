@@ -1,0 +1,5 @@
+
+
+class ConfigFile():
+
+    COOKIE = None

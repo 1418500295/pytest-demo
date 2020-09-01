@@ -1,0 +1,5 @@
+host: http://localhost:8889
+
+getdemo: /v1/getDemo
+getwithcookies: /get/with/cookies
+getcookies: /getCookies
