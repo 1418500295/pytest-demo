@@ -10,28 +10,31 @@ logger = LogConfig.get_logger()
 
 class TestTwo():
 
+
+
     @pytest.mark.dependency(name='getcookies')
-    # @pytest.mark.run(order=1)
-    def test_01(self):
+    @pytest.mark.run(order=1)
+    # @pytest.fixture(autouse=True)
+    def test_get_cookies(self):
         res = requests.get(UrlUtil.get_url('getcookies'))
         ConfigFile.COOKIE = res.cookies
-        print("cookies是", res.cookies)
-        logger.info("实际结果是"+res.text)
-
-
-    @pytest.mark.dependency(depends=["getcookies"])
-    @pytest.mark.skip
-    # @pytest.mark.run(order=2)
-    def test_02(self):
-        # res = HttpMain.get_main(UrlUtil.get_url('getwithcookies'),headers={"Cookie":"login=true"})
-        # print(str(res))
-        res = requests.get(UrlUtil.get_url('getwithcookies'),cookies=ConfigFile.COOKIE)
-        print("结果是",res.text)
+        print("cookies是:", res.cookies)
+        # logger.info("实际结果是"+res.text)
 
 
 
 
+    # @pytest.fixture(scope='class',autouse=True)
+    # def test_03(self):
+    #     print("开始")
+    #     yield
+    #     print("结束")
+    #     print("test_03")
 
-#
-# if __name__ == '__main__':
-#     pytest.main(['-s'])
+
+
+
+
+
+if __name__ == '__main__':
+    pytest.main(['-s','test_two.py'])

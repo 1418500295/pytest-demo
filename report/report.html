@@ -125,20 +125,20 @@ tr {
                     <h2>PyTestReport</h2>
                     
                     <div>
-                        <p class='attribute'><strong>开始时间:</strong> 2020-09-01 10:29:53</p>
-                        <p class='attribute'><strong>执行耗时:</strong> 0.298655</p>
+                        <p class='attribute'><strong>开始时间:</strong> 2020-09-01 15:00:48</p>
+                        <p class='attribute'><strong>执行耗时:</strong> 0.30845</p>
                         <p class='attribute'><strong>状态:</strong>
-                            <span class="badge badge-success" style="background-color: rgb(0 255 127);">&nbsp;通过: 3&nbsp;</span>
+                            <span class="badge badge-success" style="background-color: rgb(0 255 127);">&nbsp;通过: 5&nbsp;</span>
                             <span class="badge badge-danger" style="background-color: rgb(255, 99, 132);">&nbsp;失败：0&nbsp;</span>
                             <span class="badge badge-primary" style="background-color: rgb(54, 162, 235);">&nbsp;错误：0&nbsp;</span>
-                            <span class="badge badge-secondary" style="background-color: rgb(201, 203, 207);">&nbsp;跳过：1&nbsp;</span>
+                            <span class="badge badge-secondary" style="background-color: rgb(201, 203, 207);">&nbsp;跳过：0&nbsp;</span>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-4 middle-col">
                 <div class="total-area">
-                    <h1>4</h1>
+                    <h1>5</h1>
                     <div>用例总数</div>
                 </div>
                 <div class="total-area">
@@ -189,7 +189,7 @@ tr {
                     </tr>
                     
                     <tr class='passClass' type="suite" id="testclass1">
-                        <td>TestOne</td>
+                        <td>TestTwo</td>
                         <td>2</td>
                         <td>2</td>
                         <td>0</td>
@@ -200,67 +200,58 @@ tr {
                         
                             
                                 <tr id='testpass.1.1' cid="testclass1" class='hiddenRow' type="case">
-                                    <td class='passCase'><div class='testcase'>test_getdemo</div></td>
+                                    <td class='passCase'><div class='testcase'>test_get_cookies</div></td>
                                     <td class='passCase' colspan='6' align='center'>PASS</td>
                                 </tr>
                             
                         
                             
                                 <tr id='testpass.1.2' cid="testclass1" class='hiddenRow' type="case">
-                                    <td class='passCase'><div class='testcase'>test_01</div></td>
+                                    <td class='passCase'><div class='testcase'>test_get_cookies</div></td>
                                     <td class='passCase' colspan='6' align='center'>PASS</td>
                                 </tr>
                             
                         
                     
-                    <tr class='skipClass' type="suite" id="testclass2">
-                        <td>TestTwo</td>
-                        <td>2</td>
-                        <td>1</td>
+                    <tr class='passClass' type="suite" id="testclass2">
+                        <td>TestOne</td>
+                        <td>3</td>
+                        <td>3</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>1</td>
-                        <td><a href="javascript:showClassDetail('testclass2',2)">查看详情</a></td>
+                        <td>0</td>
+                        <td><a href="javascript:showClassDetail('testclass2',3)">查看详情</a></td>
                     </tr>
                         
                             
                                 <tr id='testpass.2.1' cid="testclass2" class='hiddenRow' type="case">
-                                    <td class='passCase'><div class='testcase'>test_01</div></td>
+                                    <td class='passCase'><div class='testcase'>test_with_cookies</div></td>
                                     <td class='passCase' colspan='6' align='center'>PASS</td>
                                 </tr>
                             
                         
                             
-                                <tr id='testskip.2.2' cid="testclass2" class='' type="case">
-                                    <td class='skipCase'><div class='testcase'>test_02</div></td>
-                                    <td colspan='6' align='center'>
-                                    <!--css div popup start-->
-                                    <a class="popup_link skipCase" onfocus='this.blur();' href="javascript:showTestDetail('div_testskip.2.2')" >
-                                        SKIP</a>
-                                    <div id='div_testskip.2.2' class="popup_window">
-                                        <div style='text-align: right; color:red;cursor:pointer'>
-                                        <a onfocus='this.blur();' onclick="document.getElementById('div_testskip.2.2').style.display = 'none';" >
-                                           [x]</a>
-                                        </div>
-                                        <pre style="font-size: 14px;">
-testskip.2.2:
-Skipped
-('cases\\test_two.py', 22, 'Skipped: unconditional skip')
-                                        </pre>
-                                    </div>
-                                    <!--css div popup end-->
-                                    </td>
+                                <tr id='testpass.2.2' cid="testclass2" class='hiddenRow' type="case">
+                                    <td class='passCase'><div class='testcase'>test_getdemo</div></td>
+                                    <td class='passCase' colspan='6' align='center'>PASS</td>
+                                </tr>
+                            
+                        
+                            
+                                <tr id='testpass.2.3' cid="testclass2" class='hiddenRow' type="case">
+                                    <td class='passCase'><div class='testcase'>test_01</div></td>
+                                    <td class='passCase' colspan='6' align='center'>PASS</td>
                                 </tr>
                             
                         
                     
                     <tr id='total_row'>
                         <td>总计</td>
-                        <td>4</td>
-                        <td>3</td>
+                        <td>5</td>
+                        <td>5</td>
                         <td>0</td>
                         <td>0</td>
-                        <td>1</td>
+                        <td>0</td>
                         <td>&nbsp;</td>
                     </tr>
                 </table>
@@ -367,10 +358,10 @@ function html_escape(s) {
                     data: {
                         datasets: [{
                             data: [
-                                3,
+                                5,
                                 0,
                                 0,
-                                1,
+                                0,
                             ],
                             backgroundColor: [
                                 window.chartColors.green,
