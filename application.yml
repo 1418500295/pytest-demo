@@ -1,5 +1,9 @@
-host: http://localhost:8889
-
+#host: http://localhost:8889
+#host: http://testapi.rrty.tv:81
 getdemo: /v1/getDemo
 getwithcookies: /get/with/cookies
 getcookies: /getCookies
+
+login: /v1/login
+room_info: /v1/room/info
+customer: /v1/customer/info
