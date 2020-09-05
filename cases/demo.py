@@ -5,48 +5,40 @@ import time
 import pytest
 from websocket import *
 
+ok_num = 0
+
 def send_req():
     ws = create_connection("ws://localhost:1423")
-    ws.send("你好啊")
-    print(ws.recv())
+    ws.send("呵呵")
+    print("服务端的回复是",ws.recv())
 
-def run():
+def create_gevent():
     g_list = []
-    for i in range(100):
-        g = gevent.spawn(send_req())
-        g_list.append(g)
+    for i in range(5000):
+        current_gevent = gevent.spawn(send_req())
+        g_list.append(current_gevent)
     gevent.joinall(g_list)
 
 
+
 if __name__ == '__main__':
-    # start_time = None
-    # for i in range(4):
-    #     start_time = time.time()
-    #     p = Process(target=run)
-    #     p.start()
-    # need_time = time.time() - start_time
-    # print(start_time)
-    # print(need_time)
+    # start_time = time.time()
 
-    def run_time(process_run):
-        def wrapper():
-            start_time = time.time()
-            process_run()
-            end_time = time.time()
-            print(end_time-start_time)
-        return wrapper
-
-    @run_time
+    print("开始时间是" + time.strftime("%Y-%m-%d  %H-%M-%S", time.localtime()))
     def process_run():
         for i in range(4):
-            p = Process(target=run)
+            p = Process(target=create_gevent)
             p.start()
+        p.join()
     process_run()
+    print("结束时间是" + time.strftime("%Y-%m-%d  %H-%M-%S", time.localtime()))
+    print("成功的请求数",ok_num)
 
 
-if __name__ == '__main__':
 
-    base = dict()
-    base['name'] = 'daine'
+
+
+
+
 
 
